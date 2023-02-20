@@ -11,4 +11,6 @@ Created a sample dynamo db based off  https://github.com/100DaysOfCloud/challeng
 Created a Music table, inserted a record
 Scanned dynamo db using command " aws dynamodb scan --table-name Music --query "Items" --endpoint-url http://localhost:8000"
 Able to see the record I added to local db
- 
+
+Added Notification backend api and front end react pages and modified routes
+Made a typo on app router, had to restart docker container for front end - possibly cachced routes (Once rebooted UI worked)

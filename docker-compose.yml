@@ -7,6 +7,11 @@ services:
     build: ./backend-flask
     ports:
       - "4567:4567"
+    healthcheck:
+      test: stat /backend-flask/app.py || exit 1
+      interval: 1m
+      timeout: 10s
+      retries: 3 
     volumes:
       - ./backend-flask:/backend-flask
   frontend-react-js:
@@ -15,6 +20,11 @@ services:
     build: ./frontend-react-js
     ports:
       - "3000:3000"
+    healthcheck:
+      test: stat /frontend-react-js/src/index.js || exit 1
+      interval: 1m
+      timeout: 10s
+      retries: 3  
     volumes:
       - ./frontend-react-js:/frontend-react-js
   db:

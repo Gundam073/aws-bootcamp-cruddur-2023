@@ -14,3 +14,7 @@ Able to see the record I added to local db
 
 Added Notification backend api and front end react pages and modified routes
 Made a typo on app router, had to restart docker container for front end - possibly cachced routes (Once rebooted UI worked)
+
+Homework: Added Docker-Compose health check for backend and frontend
+          Created bacth script for Docker command
+          Pushed backend container to DockerHub account https://hub.docker.com/r/gundam073/backend-flask

@@ -8,6 +8,7 @@ services:
     ports:
       - "4567:4567"
     healthcheck:
+    #Check if backend deployed properly inside container shell - look for python script
       test: stat /backend-flask/app.py || exit 1
       interval: 1m
       timeout: 10s
@@ -21,6 +22,7 @@ services:
     ports:
       - "3000:3000"
     healthcheck:
+    #Check if frontend deployed properly inside container shell - look for index.js
       test: stat /frontend-react-js/src/index.js || exit 1
       interval: 1m
       timeout: 10s

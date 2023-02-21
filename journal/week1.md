@@ -19,4 +19,4 @@ Homework: Added Docker-Compose health check for backend and frontend
           Created bacth script for Docker command
           Pushed backend container to DockerHub account https://hub.docker.com/r/gundam073/backend-flask
 
-Google Drive pics with screen shots for homework
+Google Drive pics with screen shots for homework https://drive.google.com/drive/folders/1GpsSr21PK7qvhpgZ3u4Xu1HmKN6VTnZS?usp=share_link 

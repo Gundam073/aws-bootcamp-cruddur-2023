@@ -18,3 +18,5 @@ Made a typo on app router, had to restart docker container for front end - possi
 Homework: Added Docker-Compose health check for backend and frontend
           Created bacth script for Docker command
           Pushed backend container to DockerHub account https://hub.docker.com/r/gundam073/backend-flask
+
+Google Drive pics with screen shots for homework

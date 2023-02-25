@@ -3,13 +3,13 @@ from opentelemetry import trace
 tracer = trace.get_tracer("notification.activities")
 class NotificationsActivities:
   def run():
-    with tracer.start_as_current_span("notificaiton-activities-mock-data"):
+    with tracer.start_as_current_span("notification-activities-mock-data"):
        span = trace.get_current_span()
        now = datetime.now(timezone.utc).astimezone()
        span.set_attribute("app.now", now.isoformat())
     results = [{
         'uuid': '68f126b0-1ceb-4a33-88be-d90fa7109eee',
-      'handle':  'Darth Vader',
+      'handle':  'Darth Vader's cousin',
       'message': 'Bootcamp is very fun!',
       'created_at': (now - timedelta(days=2)).isoformat(),
       'expires_at': (now + timedelta(days=5)).isoformat(),
@@ -28,5 +28,7 @@ class NotificationsActivities:
       }],
     }
     ]
+    userid = str(results[0]["handle"])
+    span.set_attribute("userid", userid)
     span.set_attribute("app.result_length", len(results))
     return results

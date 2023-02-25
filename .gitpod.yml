@@ -26,3 +26,6 @@ ports:
   - name: app 
     port: 3000
     visibility: public
+  - name: backend 
+    port: 4567
+    visibility: public 

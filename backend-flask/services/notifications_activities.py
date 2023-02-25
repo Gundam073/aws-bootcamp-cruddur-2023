@@ -9,7 +9,7 @@ class NotificationsActivities:
        span.set_attribute("app.now", now.isoformat())
     results = [{
         'uuid': '68f126b0-1ceb-4a33-88be-d90fa7109eee',
-      'handle':  'Darth Vader's cousin',
+      'handle':  'Darth Vaders cousin',
       'message': 'Bootcamp is very fun!',
       'created_at': (now - timedelta(days=2)).isoformat(),
       'expires_at': (now + timedelta(days=5)).isoformat(),
@@ -25,7 +25,7 @@ class NotificationsActivities:
         'replies_count': 0,
         'reposts_count': 0,
         'created_at': (now - timedelta(days=2)).isoformat()
-      }],
+      }]
     }
     ]
     userid = str(results[0]["handle"])

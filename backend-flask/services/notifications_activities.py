@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, timezone
 from opentelemetry import trace
+
 tracer = trace.get_tracer("notification.activities")
 class NotificationsActivities:
   def run():
@@ -7,10 +8,11 @@ class NotificationsActivities:
        span = trace.get_current_span()
        now = datetime.now(timezone.utc).astimezone()
        span.set_attribute("app.now", now.isoformat())
+       span.set_attribute("wow.now", "?")
     results = [{
-        'uuid': '68f126b0-1ceb-4a33-88be-d90fa7109eee',
+      'uuid': '68f126b0-1ceb-4a33-88be-d90fa7109eee',
       'handle':  'Darth Vaders cousin',
-      'message': 'Bootcamp is very fun!',
+      'message': 'Bootcamp is very very fun!',
       'created_at': (now - timedelta(days=2)).isoformat(),
       'expires_at': (now + timedelta(days=5)).isoformat(),
       'likes_count': 7,
@@ -28,7 +30,7 @@ class NotificationsActivities:
       }]
     }
     ]
-    userid = str(results[0]["handle"])
-    span.set_attribute("userid", userid)
-    span.set_attribute("app.result_length", len(results))
+    for item in results:
+      span.set_attribute("handle","".format(item['handle']))
+
     return results
